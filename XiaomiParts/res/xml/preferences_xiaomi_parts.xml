@@ -33,17 +33,6 @@
         android:title="@string/display_title">
 
         <Preference
-            android:key="device_kcal"
-            android:persistent="false"
-            android:title="@string/device_kcal_title"
-            android:icon="@drawable/ic_color">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.kcal.KCalSettingsActivity"
-                android:targetPackage="org.lineageos.settings.kcal" />
-        </Preference>
-
-        <Preference
             android:key="device_doze"
             android:persistent="false"
             android:summary="@string/advanced_doze_summary"

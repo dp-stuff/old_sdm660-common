@@ -23,7 +23,6 @@ import androidx.preference.PreferenceFragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
-import org.lineageos.settings.device.kcal.KCalSettingsActivity;
 import org.lineageos.settings.device.preferences.SecureSettingListPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
 import org.lineageos.settings.device.preferences.VibrationSeekBarPreference;
@@ -40,7 +39,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String CATEGORY_DISPLAY = "display";
     private static final String PREF_DEVICE_DOZE = "device_doze";
-    private static final String PREF_DEVICE_KCAL = "device_kcal";
 
     public static final String PREF_THERMAL = "thermal";
     public static final String THERMAL_PATH = "/sys/devices/virtual/thermal/thermal_message/sconfig";
@@ -66,14 +64,6 @@ public class DeviceSettings extends PreferenceFragment implements
         if (isAppNotInstalled(DEVICE_DOZE_PACKAGE_NAME)) {
             displayCategory.removePreference(findPreference(PREF_DEVICE_DOZE));
         }
-
-        Preference kcal = findPreference(PREF_DEVICE_KCAL);
-
-        kcal.setOnPreferenceClickListener(preference -> {
-            Intent intent = new Intent(getActivity().getApplicationContext(), KCalSettingsActivity.class);
-            startActivity(intent);
-            return true;
-        });
 
         mTHERMAL = (SecureSettingListPreference) findPreference(PREF_THERMAL);
         mTHERMAL.setValue(FileUtils.getValue(THERMAL_PATH));
