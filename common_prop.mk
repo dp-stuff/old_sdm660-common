@@ -138,10 +138,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.expose.aux=1 \
     persist.camera.privapp.list=org.codeaurora.snapcam \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam \
-    vendor.camera.aux.packageblacklist=com.google.android.GoogleCamera,com.discord \
-    camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi
-
+    vendor.camera.aux.packageblacklist=com.discord \
+    camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam \
+    vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam
 
 # Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
