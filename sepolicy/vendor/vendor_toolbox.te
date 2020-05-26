@@ -56,4 +56,4 @@ allow vendor_toolbox {
     persist_time_file
     regionalization_file
     sensors_persist_file
-}:file { getattr};
+}:file getattr;
