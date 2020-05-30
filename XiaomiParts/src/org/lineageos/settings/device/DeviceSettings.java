@@ -47,7 +47,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String CATEGORY_NOTIF = "notification_led";
     public static final String PREF_NOTIF_LED = "notification_led_brightness";
     public static final String NOTIF_LED_PATH = "/sys/class/leds/white/max_brightness";
-
+    
+    public static final  String CATEGORY_AMPLIFY = "amplify";
     public static final  String PREF_HEADPHONE_GAIN = "headphone_gain";
     public static final  String PREF_MIC_GAIN = "mic_gain";
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
@@ -99,19 +100,14 @@ public class DeviceSettings extends PreferenceFragment implements
             vibrationStrength.setOnPreferenceChangeListener(this);
         } else { getPreferenceScreen().removePreference(findPreference(CATEGORY_VIBRATOR)); }
 
-        // Headphone Gain
-        CustomSeekBarPreference headphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
+        // Headphone & Mic gain
         if (FileUtils.fileWritable(HEADPHONE_GAIN_PATH)) {
+           CustomSeekBarPreference headphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
            headphoneGain.setOnPreferenceChangeListener(this);
+           CustomSeekBarPreference micGain = (CustomSeekBarPreference) findPreference(PREF_MIC_GAIN);
+            micGain.setOnPreferenceChangeListener(this);
         } else {
-          getPreferenceScreen().removePreference(headphoneGain);
-        }
-        // Mic Gain
-        CustomSeekBarPreference micGain = (CustomSeekBarPreference) findPreference(PREF_MIC_GAIN);
-         if (FileUtils.fileWritable(MIC_GAIN_PATH)) {
-          micGain.setOnPreferenceChangeListener(this);
-         } else {
-        getPreferenceScreen().removePreference(micGain);
+          getPreferenceScreen().removePreference(findPreference(CATEGORY_AMPLIFY));
         }
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);

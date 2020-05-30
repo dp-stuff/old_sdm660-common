@@ -41,7 +41,7 @@
     </PreferenceCategory>
     
     <PreferenceCategory
-       android:key="audio"
+       android:key="amplify"
        android:title="@string/audio_title">
 
         <org.lineageos.settings.device.preferences.CustomSeekBarPreference

@@ -26,10 +26,10 @@ import androidx.preference.PreferenceManager;
 import org.lineageos.settings.device.kcal.Utils;
 
 public class BootReceiver extends BroadcastReceiver implements Utils {
-
+    
     public static final  String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final  String MIC_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
-
+    
     public void onReceive(Context context, Intent intent) {
 
     	SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
