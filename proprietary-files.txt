@@ -545,8 +545,13 @@ vendor/lib64/libqmi_common_so.so|325a41290032b082248db307481811b2319284cc
 vendor/lib64/libqmi_csi.so|ffb588ad44863278814f856e030fa25b293ed125
 vendor/lib64/libqmi_encdec.so|eedf39676bf4447cb2e3f629d1d18dcad846ab85
 vendor/lib64/libqmiservices.so|9e9b8fe80ebb99762186779ce08b3de3a3253e60
-vendor/lib64/libqrtr.so|c7ca700c1f4759aa673a6c5478ca492487bbea70
 vendor/lib64/libqsocket.so|40816476d857f2ad07490415f6ff7433517ccef8
+
+# QRTR - from jasmine
+vendor/bin/qrtr-cfg|f2433cbff23c57f531882a70e33e066f9f02d919
+vendor/bin/qrtr-lookup|54e4244db1166ee9ebc92218b3214eedaee9b42d
+vendor/bin/qrtr-ns|90a5a0c488b09fed69e4f402eb30d0c22340fcba
+vendor/lib64/libqrtr.so|c7ca700c1f4759aa673a6c5478ca492487bbea70
 
 # Radio - from LA.UM.8.2.r1-06700-sdm660.0
 -product/app/QtiTelephonyService/QtiTelephonyService.apk|9758fbbaa7b2a18c01a32200b3a86a4dbc798d3c
